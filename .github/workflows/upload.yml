@@ -53,9 +53,9 @@ jobs:
         cp build/${{ needs.setup.outputs.APPNAME }} ${{ env.PACKAGENAME }}
         strip -g ${{ env.PACKAGENAME }}/${{ needs.setup.outputs.APPNAME }}
         cp -r models/* ${{ env.PACKAGENAME }}
-        zip -9 -r ${{ env.PACKAGENAME }}.zip ${{ env.PACKAGENAME }}
+        zip -9 -r ${{ env.APPLICATION_NAME }}.zip ${{ env.PACKAGENAME }}
     - name: upload
       uses: actions/upload-artifact@v2
       with:
-        name: ${{ env.PACKAGENAME }}
-        path: ${{ env.PACKAGENAME }}.zip
+        name: ${{ env.APPLICATION_NAME }}
+        path: ${{ env.APPLICATION_NAME }}.zip
