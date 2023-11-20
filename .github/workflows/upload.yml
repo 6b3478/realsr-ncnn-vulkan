@@ -20,7 +20,7 @@ jobs:
 
   ubuntu:
     needs: [setup]
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     env:
       PACKAGENAME: ${{ needs.setup.outputs.APPNAME }}-${{ needs.setup.outputs.VERSION }}-ubuntu
     steps:
